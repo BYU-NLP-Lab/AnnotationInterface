@@ -1,0 +1,43 @@
+#######################################################################
+# 						Project Description
+#
+# AnnotationInterface defines a set of data objects and interfaces
+# useful for annotating corpora. AnnotationInterface is used
+# used by CCASH, a web-based annotation framework. For more
+# information about CCASH, see http://ccash.sourceforge.net
+# 
+#######################################################################
+
+#######################################################################
+# 						CCASH AGPL License
+#
+# Copyright (c) 2011 BYU.
+# 
+# AnnotationInterface is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published 
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# AnnotationInterface is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with AnnotationInterface at licenses/agpl.txt.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# Contact: 		Paul Felt (pablofelt@gmail.com)
+# 
+#######################################################################
+
+#######################################################################
+# 						Supporting Libraries
+#
+# AnnotationInterface depends on a number of supporting libraries. 
+# Each supporting library has its own license, referenced here for
+# convenience. 
+# 
+# Name								# License					# Copyright and License Url
+# Gson								Apache 2.0					http://code.google.com/p/google-gson/
+# Hibernate							LGPL 2.1					http://www.hibernate.org/license
+#######################################################################
