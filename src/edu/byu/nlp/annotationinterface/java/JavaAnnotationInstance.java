@@ -42,13 +42,10 @@ import edu.byu.nlp.middleware.TimelineEvent;
 public interface JavaAnnotationInstance<T, A>
 	extends Identifiable {
 	
-	@Override
-	long getId();
-	
 	/**
 	 * @return the Instance that was annotated 
 	 */
-	Instance<T,A> getInstance();
+	Instance<T> getInstance();
 	
 	/**
 	 * The PreAnnotation provided at the time this instance was served to the client

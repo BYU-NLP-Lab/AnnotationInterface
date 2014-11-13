@@ -25,18 +25,18 @@ import edu.byu.nlp.annotationinterface.Instance;
 // TODO : shouldn't this be renamed to BasicAutomaticAnnotation to match its interface?
 public class BasicPreAnnotation<T, A> implements AutomaticAnnotation<T, A> {
 
-	private final Instance<T, A> instance;
+	private final Instance<T> instance;
 	private final AutomaticAnnotator<T, A> model;
 	private final A value;
 	
-	public BasicPreAnnotation(Instance<T, A> instance, AutomaticAnnotator<T, A> model, A value) {
+	public BasicPreAnnotation(Instance<T> instance, AutomaticAnnotator<T, A> model, A value) {
 		this.instance = instance;
 		this.model = model;
 		this.value = value;
 	}
 	
 	@Override
-	public Instance<T, A> getInstance() {
+	public Instance<T> getInstance() {
 		return instance;
 	}
 	
