@@ -47,6 +47,8 @@ public interface Instance<T>
 	@Override
 	T getValue();
 
+	String getSource();
+	
 	// via (inverse) relationships, i.e. query needed
 	//Collection<AnnotationInstance> getAnnotationInstances();
 	//<M extends Identifiable> Collection<PreAnnotation<T, A, M>> getPreAnnotations();
