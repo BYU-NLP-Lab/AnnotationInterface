@@ -1,0 +1,8 @@
+This introduces some minor breaking changes and 
+corresponds to maven artifact 0.0.2
+Changes are minor, but breaking, naming
+changes
+
+changes:
+removed unused label generic on Instance
+renamed PreAnnotation -> AutomaticAnnotation
