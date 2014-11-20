@@ -63,10 +63,5 @@
   		<!-- this abuses somewhat the semantics of optional, but is the best we can do. -->
   		<optional>true</optional>
   	</dependency>
-  	<dependency>
-  		<groupId>edu.byu.nlp</groupId>
-  		<artifactId>commons</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   </dependencies>
 </project>

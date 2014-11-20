@@ -22,13 +22,14 @@ import edu.byu.nlp.annotationinterface.AutomaticAnnotation;
 import edu.byu.nlp.annotationinterface.AutomaticAnnotator;
 import edu.byu.nlp.annotationinterface.Instance;
 
-public class BasicAutomaticAnnotation<T, A> implements AutomaticAnnotation<T, A> {
+// TODO : shouldn't this be renamed to BasicAutomaticAnnotation to match its interface?
+public class BasicPreAnnotation<T, A> implements AutomaticAnnotation<T, A> {
 
 	private final Instance<T> instance;
 	private final AutomaticAnnotator<T, A> model;
 	private final A value;
 	
-	public BasicAutomaticAnnotation(Instance<T> instance, AutomaticAnnotator<T, A> model, A value) {
+	public BasicPreAnnotation(Instance<T> instance, AutomaticAnnotator<T, A> model, A value) {
 		this.instance = instance;
 		this.model = model;
 		this.value = value;
@@ -51,7 +52,7 @@ public class BasicAutomaticAnnotation<T, A> implements AutomaticAnnotation<T, A>
 
 	@Override
 	public String toString() {
-		return "BasicAutomaticAnnotation [instance=" + instance + ", model=" + model
+		return "BasicPreAnnotation [instance=" + instance + ", model=" + model
 				+ ", value=" + value + "]";
 	}
 

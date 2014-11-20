@@ -29,7 +29,6 @@ public class BasicTimelineEvent implements TimelineEvent {
 	private Timestamp timestamp;
 	private int order;
 	private String eventName;
-
 	
 	public BasicTimelineEvent(AnnotationInstance annotationInstance, Timestamp timestamp, int order, String eventName){
 		this.annotationInstance = annotationInstance;

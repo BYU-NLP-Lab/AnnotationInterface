@@ -22,7 +22,6 @@
 package edu.byu.nlp.annotationinterface.java;
 
 
-
 /**
  * To obtain timing information, use getAnnotationInstance().getTimeline();
  * 

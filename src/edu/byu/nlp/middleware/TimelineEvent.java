@@ -32,23 +32,9 @@ import edu.byu.nlp.annotationinterface.AnnotationInstance;
  * without explicitly adding another class like this.
  * 
  * @author rah67
- * @author plf1
  *
  */
 public interface TimelineEvent {
-
-	/**
-	 * The name of timeline events that indicate the time that an 
-	 * annotator STARTS being visually presented with an annotationinstance.
-	 */
-	public static final String ANNOTATOR_GAIN_FOCUS = "ANNOTATOR_GAIN_FOCUS";
-
-	/**
-	 * The name of timeline events that indicate the time that an 
-	 * annotator STOPS being visually presented with an annotationinstance.
-	 */
-	public static final String ANNOTATOR_LOSE_FOCUS = "ANNOTATOR_LOSE_FOCUS";
-
 	
 	// In a weak entity relationship the PK consists of
 	// the identifying entity's PK and the weak entity's PK
