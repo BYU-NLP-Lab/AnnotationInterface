@@ -50,7 +50,7 @@ public class DefaultInOrderInstanceProviderFactory<T, A> implements
 	 * @see edu.byu.nlp.annotationinterface.InstanceProviderFactory#newInstanceProvider(java.util.Collection)
 	 */
 	@Override
-	public JavaInstanceProvider<T, A> newInstanceProvider(Collection<Instance<T>> instances) {
+	public JavaInstanceProvider<T, A> newInstanceProvider(Collection<Instance<T, A>> instances) {
 		return new InOrderInstanceProvider<T, A>(instances.iterator(), preAnnotator);
 	}
 

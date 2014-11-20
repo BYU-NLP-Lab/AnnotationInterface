@@ -37,7 +37,7 @@ public interface AutomaticAnnotator<T,A> extends Identifiable {
 	@Override
 	long getId();
 	
-	AutomaticAnnotation<T,A> annotate(Instance<T> instance);
+	AutomaticAnnotation<T,A> annotate(Instance<T,A> instance);
 	
 	List<Annotation<T,A>> getOrderedAnnotations();
 

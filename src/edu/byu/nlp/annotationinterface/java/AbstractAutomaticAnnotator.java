@@ -22,25 +22,25 @@ import java.util.List;
 
 import edu.byu.nlp.annotationinterface.AutomaticAnnotator;
 
-public abstract class AbstractAutomaticAnnotator<T, A> extends AbstractIdentifiable implements AutomaticAnnotator<T, A>{
+public abstract class AbstractAutomaticAnnotator<T, A> implements AutomaticAnnotator<T, A>{
 
+	private long id;
 	private List<Annotation<T, A>> orderedAnnotations;
 	private long trainTime;
 	
 	public AbstractAutomaticAnnotator(long id, List<Annotation<T, A>> orderedAnnotations, long trainTime){
-		super(id);
+		this.setId(id);
 		this.setOrderedAnnotations(orderedAnnotations);
 		this.setTrainTime(trainTime);
 	}
 
-	@Deprecated
 	public void setId(long id) {
-		super.setId(id);
+		this.id = id;
 	}
 
 	@Override
 	public long getId() {
-		return getId();
+		return id;
 	}
 
 	public void setOrderedAnnotations(List<Annotation<T, A>> orderedAnnotations) {

@@ -33,7 +33,7 @@ package edu.byu.nlp.annotationinterface;
  * @author rah67
  *
  */
-public interface Instance<T>
+public interface Instance<T, A>
 	extends Identifiable, ValueCarrying<T> {
 
 	// TODO : could remove these first two

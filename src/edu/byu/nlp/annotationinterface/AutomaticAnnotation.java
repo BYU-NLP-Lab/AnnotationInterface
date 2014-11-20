@@ -46,7 +46,7 @@ public interface AutomaticAnnotation<T, A> extends ValueCarrying<A> {
 	/**
 	 * @return the instance for which this is a pre-annotation
 	 */
-	Instance<T> getInstance();
+	Instance<T,A> getInstance();
 	
 	/**
 	 * @return the model used to produce this pre-annotation

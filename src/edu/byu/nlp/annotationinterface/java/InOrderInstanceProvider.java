@@ -35,7 +35,7 @@ import edu.byu.nlp.annotationinterface.NewPreAnnotatorListener;
  */
 public class InOrderInstanceProvider<T,A> implements JavaInstanceProvider<T,A>, NewPreAnnotatorListener<T, A> {
 	
-	private final Iterator<Instance<T>> it;
+	private final Iterator<Instance<T,A>> it;
 	private AutomaticAnnotator<T,A> preAnnotator;
 	
 	/**
@@ -43,11 +43,11 @@ public class InOrderInstanceProvider<T,A> implements JavaInstanceProvider<T,A>, 
 	 * 
 	 * @param iterator
 	 */
-	public InOrderInstanceProvider(Iterator<Instance<T>> iterator) {
+	public InOrderInstanceProvider(Iterator<Instance<T, A>> iterator) {
 		this(iterator, null);
 	}
 	
-	public InOrderInstanceProvider(Iterator<Instance<T>> iterator,
+	public InOrderInstanceProvider(Iterator<Instance<T, A>> iterator,
 			AutomaticAnnotator<T, A> preAnnotator) {
 		this.it = iterator;
 		this.preAnnotator = preAnnotator;
@@ -63,7 +63,7 @@ public class InOrderInstanceProvider<T,A> implements JavaInstanceProvider<T,A>, 
 		
 		// Is there any data to dispense?
 		if (it.hasNext()) {
-			Instance<T> instance = it.next();
+			Instance<T,A> instance = it.next();
 			AutomaticAnnotation<T, A> annotation = null;
 			
 			// avoids synchronization issues

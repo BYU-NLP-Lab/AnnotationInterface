@@ -40,5 +40,5 @@ public interface InstanceProviderFactory<T,A> {
 	 * 
 	 * @return an instance provider initialized with the seed set
 	 */
-	JavaInstanceProvider<T, A> newInstanceProvider(Collection<Instance<T>> instances);
+	JavaInstanceProvider<T, A> newInstanceProvider(Collection<Instance<T,A>> instances);
 }

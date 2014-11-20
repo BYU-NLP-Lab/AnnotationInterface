@@ -20,9 +20,10 @@ package edu.byu.nlp.annotationinterface.java;
 
 import edu.byu.nlp.annotationinterface.Instance;
 
-public class BasicInstance<T, A> extends AbstractIdentifiable implements Instance<T>{
+public class BasicInstance<T, A> implements Instance<T,A>{
 
 //	private Collection<AnnotationInstance> annotationInstances;
+	private final long id;
 	private final T value;
 //	private Collection<PreAnnotation<T, A, Identifiable>> preAnnotations;
 	
@@ -32,10 +33,15 @@ public class BasicInstance<T, A> extends AbstractIdentifiable implements Instanc
 //			Collection<AnnotationInstance> annotationInstances, 
 //			Collection<PreAnnotation<T, A, Identifiable>> preAnnotations
 			){
-		super(id);
+		this.id = id;
 		this.value = value;
 //		this.annotationInstances = annotationInstances;
 //		this.preAnnotations = preAnnotations;
+	}
+
+	@Override
+	public long getId() {
+		return id;
 	}
 
 	@Override
@@ -45,9 +51,9 @@ public class BasicInstance<T, A> extends AbstractIdentifiable implements Instanc
 
 	@Override
 	public String toString() {
-		return "BasicInstance [id=" + getId() + ", value=" + value + "]";
+		return "BasicInstance [id=" + id + ", value=" + value + "]";
 	}
-	
+
 	/*
 	@Override
 	public Collection<AnnotationInstance> getAnnotationInstances() {

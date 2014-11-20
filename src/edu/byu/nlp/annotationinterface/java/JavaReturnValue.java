@@ -41,7 +41,7 @@ public interface JavaReturnValue<T, A> {
 	/**
 	 * @return the instance to be sent to the client.
 	 */
-	Instance<T> getInstance();
+	Instance<T,A> getInstance();
 	
 	/**
 	 * @return the pre-annotation the client should use for the instance.

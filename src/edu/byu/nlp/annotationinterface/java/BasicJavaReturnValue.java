@@ -23,16 +23,16 @@ import edu.byu.nlp.annotationinterface.Instance;
 
 public class BasicJavaReturnValue<T, A> implements JavaReturnValue<T, A> {
 
-	private Instance<T> instance;
+	private Instance<T,A> instance;
 	private AutomaticAnnotation<T,A> preAnnotation;
 
-	public BasicJavaReturnValue(Instance<T> instance, AutomaticAnnotation<T,A> preAnnotation){
+	public BasicJavaReturnValue(Instance<T,A> instance, AutomaticAnnotation<T,A> preAnnotation){
 		this.instance = instance;
 		this.preAnnotation = preAnnotation;
 	}
 	
 	@Override
-	public Instance<T> getInstance() {
+	public Instance<T, A> getInstance() {
 		return instance;
 	}
 

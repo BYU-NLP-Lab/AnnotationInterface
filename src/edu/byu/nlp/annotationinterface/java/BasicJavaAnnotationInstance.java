@@ -26,15 +26,16 @@ import edu.byu.nlp.annotationinterface.Instance;
 import edu.byu.nlp.middleware.Annotator;
 import edu.byu.nlp.middleware.TimelineEvent;
 
-public class BasicJavaAnnotationInstance<T, A> extends AbstractIdentifiable implements JavaAnnotationInstance<T, A> {
+public class BasicJavaAnnotationInstance<T, A> implements JavaAnnotationInstance<T, A> {
 
+	private final long id;
 	private final Annotator annotator;
-	private final Instance<T> instance;
+	private final Instance<T,A> instance;
 	private final AutomaticAnnotation<T, A> preAnnotation;
 	private final List<TimelineEvent> timelineEvents;
 	
-	public BasicJavaAnnotationInstance(long aiId, Annotator annotator, Instance<T> instance, AutomaticAnnotation<T,A> preAnnotation, List<TimelineEvent> timelineEvents){
-		super(aiId);
+	public BasicJavaAnnotationInstance(long aiId, Annotator annotator, Instance<T,A> instance, AutomaticAnnotation<T,A> preAnnotation, List<TimelineEvent> timelineEvents){
+		this.id = aiId;
 		this.annotator = annotator;
 		this.instance = instance;
 		this.preAnnotation = preAnnotation;
@@ -48,7 +49,12 @@ public class BasicJavaAnnotationInstance<T, A> extends AbstractIdentifiable impl
 	}
 
 	@Override
-	public Instance<T> getInstance() {
+	public long getId() {
+		return id;
+	}
+
+	@Override
+	public Instance<T, A> getInstance() {
 		return instance;
 	}
 
@@ -76,7 +82,7 @@ public class BasicJavaAnnotationInstance<T, A> extends AbstractIdentifiable impl
 
 			@Override
 			public long getId() {
-				return BasicJavaAnnotationInstance.this.getId();
+				return BasicJavaAnnotationInstance.this.id;
 			}
 
 			@Override
@@ -110,7 +116,7 @@ public class BasicJavaAnnotationInstance<T, A> extends AbstractIdentifiable impl
 	@Override
 	public String toString() {
 		return "BasicJavaAnnotationInstance [annotator=" + annotator + ", id="
-				+ getId() + ", instance=" + instance + ", preAnnotation="
+				+ id + ", instance=" + instance + ", preAnnotation="
 				+ preAnnotation + ", timelineEvents=" + timelineEvents + "]";
 	}
 
