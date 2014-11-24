@@ -29,16 +29,8 @@ public class BasicInstance<T> extends AbstractIdentifiable implements Instance<T
 
 	public BasicInstance(
 			long id, 
+			String source,
 			T value
-//			Collection<AnnotationInstance> annotationInstances, 
-//			Collection<PreAnnotation<T, A, Identifiable>> preAnnotations
-			){
-		this(id,value,null);
-	}
-	public BasicInstance(
-			long id, 
-			T value,
-			String source
 //			Collection<AnnotationInstance> annotationInstances, 
 //			Collection<PreAnnotation<T, A, Identifiable>> preAnnotations
 			){

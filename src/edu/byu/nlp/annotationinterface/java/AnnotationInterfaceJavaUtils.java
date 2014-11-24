@@ -38,32 +38,42 @@ public class AnnotationInterfaceJavaUtils {
 	public static final long NULL_TIMESTAMP = -1;
 	public static final int NULL_TIMELINE_ORDER = -1;
 	
-	
+
 	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, String source){
-		Instance<T> instance = new BasicInstance<T>(instanceIdFromSource(source), data, source);
+		return newLabeledInstance(data, label, instanceIdFromSource(source), source);
+	}
+	
+	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, long instanceId, String source){
+		Instance<T> instance = new BasicInstance<T>(instanceId, source, data);
 		AutomaticAnnotator<T, A> model = newGoldAnnotator();
 		return new BasicAutomaticAnnotation<T, A>(instance, model, label);
 	}
 
-	public static synchronized Annotator newAnnotator(String annotatorId){
-		return new BasicAnnotator(annotatorIdFromUsername(annotatorId), null, null);
-	}
-
-	public static synchronized<T, A> Annotation<T, A> newAnnotatedInstance(String annotatorId, A annotation, String source){
-		return newAnnotatedInstance(annotatorId, annotation, NULL_TIMESTAMP, NULL_TIMESTAMP, null, source);
+	public static synchronized Annotator newAnnotator(long annotatorId){
+		return new BasicAnnotator(annotatorId, null, null);
 	}
 	
-	public static synchronized<T, A> Annotation<T, A> newAnnotatedInstance(String annotatorId, A annotation, T data, String source){
-		return newAnnotatedInstance(annotatorId, annotation, NULL_TIMESTAMP, NULL_TIMESTAMP, data, source);
+	public static synchronized<T, A> Annotation<T, A> newAnnotatedInstance(String username, A annotation, String source, T data){
+		return newAnnotatedInstance(annotatorIdFromUsername(username), annotation, NULL_TIMESTAMP, NULL_TIMESTAMP, source, data);
+	}
+
+	public static synchronized <T, A> Annotation<T, A> newAnnotatedInstance(
+			String username, A annotation, long startTs, long endTs, String source, T data){
+		return newAnnotatedInstance(annotatorIdFromUsername(username), annotation, startTs, endTs, source, data);
+	}
+
+	public static synchronized <T, A> Annotation<T, A> newAnnotatedInstance(
+			long annotatorId, A annotation, long startTs, long endTs, String source, T data){
+		return newAnnotatedInstance(annotatorId, annotation, startTs, endTs, instanceIdFromSource(source), source, data);
 	}
 	
 	/**
 	 * Create an annotation connected to a java annotationinstance (with a timeline) and an instance
 	 */
 	public static synchronized <T, A> Annotation<T, A> newAnnotatedInstance(
-			String annotatorId, A annotation, long startTs, long endTs, T data, String source){
+			long annotatorId, A annotation, long startTs, long endTs, long instanceId, String source, T data){
 		
-		Instance<T> instance = new BasicInstance<T>(instanceIdFromSource(source), data, source);
+		Instance<T> instance = new BasicInstance<T>(instanceId, source, data);
 		Annotator annotator = newAnnotator(annotatorId);
 		AutomaticAnnotation<T, A> preAnnotation = null;
 		
