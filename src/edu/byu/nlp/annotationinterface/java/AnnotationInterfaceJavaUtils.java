@@ -39,13 +39,14 @@ public class AnnotationInterfaceJavaUtils {
 	public static final int NULL_TIMELINE_ORDER = -1;
 	
 
-	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, String source){
-		return newLabeledInstance(data, label, instanceIdFromSource(source), source);
+	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, String source, boolean isConcealed){
+		return newLabeledInstance(data, label, instanceIdFromSource(source), source, isConcealed);
 	}
 	
-	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, long instanceId, String source){
+	public static <T, A> AutomaticAnnotation<T, A> newLabeledInstance(T data, A label, long instanceId, 
+			String source, boolean isConcealed){
 		Instance<T> instance = new BasicInstance<T>(instanceId, source, data);
-		AutomaticAnnotator<T, A> model = newGoldAnnotator();
+		AutomaticAnnotator<T, A> model = newGoldAnnotator(isConcealed);
 		return new BasicAutomaticAnnotation<T, A>(instance, model, label);
 	}
 
@@ -96,8 +97,10 @@ public class AnnotationInterfaceJavaUtils {
 		return new BasicTimelineEvent(null, new Timestamp(timestamp), NULL_TIMELINE_ORDER, eventName);
 	}
 
-	public static <T, A> AutomaticAnnotator<T, A> newGoldAnnotator(){
-		return new NullAutomaticAnnotator<T,A>(Constants.GOLD_AUTOMATIC_ANNOTATOR_ID);
+	public static <T, A> AutomaticAnnotator<T, A> newGoldAnnotator(boolean isConcealed){
+		return new NullAutomaticAnnotator<T,A>(isConcealed? 
+				Constants.CONCEALED_GOLD_AUTOMATIC_ANNOTATOR:
+				Constants.OBSERVED_GOLD_AUTOMATIC_ANNOTATOR);
 	}
 	
 	private static Indexer<String> sourceIndexer = new Indexer<String>();
