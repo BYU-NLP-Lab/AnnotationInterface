@@ -30,7 +30,7 @@ package edu.byu.nlp.annotationinterface;
  * 
  * A pre-annotation is uniquely defined by the instance
  * for which it was made and the model that produced it. 
- * In the entity-relatioship model, this is can be seen as
+ * In the entity-relationship model, this is can be seen as
  * a weak entity that depends on Instance.
  *  
  * @author rah67
