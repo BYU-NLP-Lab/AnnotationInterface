@@ -6,9 +6,9 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>annotationinterface</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>Annotation Interface</name>
-  <description>A collection of java interfaces related to modeling annotated data instances.</description>
+  <description>A collection of Java interfaces related to modeling annotated data instances.</description>
   <licenses>
     <license>
       <name>Affero GPL3</name>
