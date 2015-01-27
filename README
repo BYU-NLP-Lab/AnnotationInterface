@@ -41,3 +41,10 @@
 # Gson								Apache 2.0					http://code.google.com/p/google-gson/
 # Hibernate							LGPL 2.1					http://www.hibernate.org/license
 #######################################################################
+
+#######################################################################
+#                             Versions
+# 0.0.1: Initial version of AnnotationInterface used in CCASH
+# 1.0.0-SNAPSHOT: New version under development
+#######################################################################
+
