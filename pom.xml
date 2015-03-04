@@ -3,10 +3,10 @@
   <parent>
     <groupId>edu.byu.nlp</groupId>
     <artifactId>byunlp-maven-base</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
   <artifactId>annotationinterface</artifactId>
-  <version>0.0.1</version>
+  <version>1.0</version>
   <name>Annotation Interface</name>
   <description>A collection of Java interfaces related to modeling annotated data instances.</description>
   <licenses>

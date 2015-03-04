@@ -45,6 +45,7 @@
 #######################################################################
 #                             Versions
 # 0.0.1: Initial version of AnnotationInterface used in CCASH
-# 1.0.0-SNAPSHOT: New version under development
+# 1.0: Introduced minor, but breaking, naming changes (and got rid of the 'micro' version)
+# 1.1-SNAPSHOT: New version under development
 #######################################################################
 
