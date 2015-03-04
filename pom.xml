@@ -3,12 +3,12 @@
   <parent>
     <groupId>edu.byu.nlp</groupId>
     <artifactId>byunlp-maven-base</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>annotationinterface</artifactId>
-  <version>1.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>Annotation Interface</name>
-  <description>A collection of Java interfaces related to modeling annotated data instances.</description>
+  <description>A collection of java interfaces related to modeling annotated data instances.</description>
   <licenses>
     <license>
       <name>Affero GPL3</name>
@@ -62,6 +62,11 @@
   		<!-- "Optional" simply so that this does not become a transitive dependency -->
   		<!-- this abuses somewhat the semantics of optional, but is the best we can do. -->
   		<optional>true</optional>
+  	</dependency>
+  	<dependency>
+  		<groupId>edu.byu.nlp</groupId>
+  		<artifactId>commons</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
 </project>
